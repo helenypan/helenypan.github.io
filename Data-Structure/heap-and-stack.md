@@ -17,4 +17,4 @@ The size of the stack is set when a thread is created. The size of the heap is s
 - **What makes one faster?**
 The stack is faster because the access pattern makes it trivial to allocate and deallocate memory from it (a pointer/integer is simply incremented or decremented), while the heap has much more complex bookkeeping involved in an allocation or free. Also, each byte in the stack tends to be reused very frequently which means it tends to be mapped to the processor's cache, making it very fast. Another performance hit for the heap is that the heap, being mostly a global resource, typically has to be multi-threading safe, i.e. each allocation and deallocation needs to be - typically - synchronized with "all" other heap accesses in the program.
     
-    ![](heap_stack_0.png?raw=true)
+    ![](./img/heap_stack_0.png?raw=true)

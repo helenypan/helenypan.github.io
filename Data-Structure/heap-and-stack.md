@@ -29,7 +29,7 @@ Each thread gets a stack, while there's typically only one heap for the applicat
     - Variables created on the stack will go out of scope and automatically deallocate
     - Much faster to allocate in comparision to variables on the heap
     - Implemented with an actual stack data structure
-    - Stores local data, erturn addresses, used for parameter passing
+    - Stores local data, return addresses, used for parameter passing
     - Can have a stack overflow when too much of the stack is used. (mostly from infinite or too much recursion, very large allocations)
     - Data created on the stack can be used without pointers
     - You would use the stack if you know exactly how much data you need to allocate before compile time and it is not too big.

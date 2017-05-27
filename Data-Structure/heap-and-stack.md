@@ -18,3 +18,47 @@ The size of the stack is set when a thread is created. The size of the heap is s
 The stack is faster because the access pattern makes it trivial to allocate and deallocate memory from it (a pointer/integer is simply incremented or decremented), while the heap has much more complex bookkeeping involved in an allocation or free. Also, each byte in the stack tends to be reused very frequently which means it tends to be mapped to the processor's cache, making it very fast. Another performance hit for the heap is that the heap, being mostly a global resource, typically has to be multi-threading safe, i.e. each allocation and deallocation needs to be - typically - synchronized with "all" other heap accesses in the program.
     
     ![](./img/heap_stack_0.png?raw=true)
+
+### Answer Two
+- Stack
+    - Stored in computer RAM just like the heap
+    - Variables created on the stack will go out of scope and automatically deallocate
+    - Much faster to allocate in comparision to variables on the heap
+    - Implemented with an actual stack data structure
+    - Stores local data, erturn addresses, used for parameter passing
+    - Can have a stack overflow when too much of the stack is used. (mostly from infinite or too much recursion, very large allocations)
+    - Data created on the stack can be used without pointers
+    - You would use the stack if you know exactly how much data you need to allocate before compile time and it is not too big.
+    - Usually has a maximum size already determined when your program starts.
+
+- Heap 
+    - Stored in computer RAM just like the stack.
+    - Variables on the heap must be destroyed manually and never fall out of scope. The data is freed with delete, delete[] or free
+    - Slower to allocate in comparison to variables on the stack.
+    - Used on demand to allocate a block of data for use by the program.
+    - Can have fragmentation when there are a lot of allocations and deallocations
+    - In C++ data created on the heap will be pointed to by pointers and allocated with new or malloc
+    - Can have allocation failures if too big of a buffer is requested to be allocated.
+    - You would use the heap if you don't know exactly how much data you will need at runtime or if you need to allocate a lot of data.
+    - Responsible for memory leaks
+
+- Example
+```
+int foo()
+{
+  char *pBuffer; //<--nothing allocated yet (excluding the pointer itself, which is allocated here on the stack).
+  bool b = true; // Allocated on the stack.
+  if(b)
+  {
+    //Create 500 bytes on the stack
+    char buffer[500];
+    //Create 500 bytes on the heap
+    pBuffer = new char[500];
+   }//<-- buffer is deallocated here, pBuffer is not
+}//<--- oops there's a memory leak, I should have called delete[] pBuffer;
+```
+
+The most important point is that heap and stack are generic terms for ways in which memory can be allocated. They can be implemented in many different ways, and the terms apply to the basic concepts.
+- In a stack of items, items sit one on top of the other in the order they were placed there, and you can only remove the top one (without toppling the whole thing over).
+- In a heap, there is no particular order to the way items are placed. You can reach in and remove items in any order because there is no clear 'top' item.
+

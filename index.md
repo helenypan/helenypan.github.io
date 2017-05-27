@@ -1,2 +1,4 @@
 - [Linux](./Linux)
     - [Linux Installation and Initial Configuration](./Linux/linux_installation_and_initial_configuration.md)
+- [Data Structure](./Data-Structure)
+    - [Heap and Stack](./Data-Structure/heap-and-stack.md)

@@ -4,3 +4,4 @@
     - [Heap and Stack](./Data-Structure/heap-and-stack.md)
 - [Coding](./Coding)
 	- [What Good Coding Looks Like](./Coding/what-good-coding-looks-like.md)
+- [Algorithms](./Algorithms)

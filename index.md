@@ -5,3 +5,6 @@
 - [Coding](./Coding)
 	- [What Good Coding Looks Like](./Coding/what-good-coding-looks-like.md)
 - [Algorithms](./Algorithms)
+- [Data Science](./Data-Science)
+	- [Binary Classification](./Data-Science/binary-classification.md)
+	- [Machine Learning](./Data-Science/machine-learning.md)

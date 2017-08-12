@@ -1,0 +1,8 @@
+1. git merge branch1 branch2
+does it mean merge branch1 to branch2? or it doesn't matter, becaue you have to check out one branch beofre merge. 
+
+2. HEAD, 
+I think that HEAD is at the latest commit , is it correct? so when change to another branch, and make commits on this branch, the HEAD will be at the latest commit of this branch?
+
+3. 
+
